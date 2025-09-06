@@ -4,9 +4,12 @@
 
     let v1: Vector = $state(new Vector(0, 100));
     let v2: Vector = $state(new Vector(100, 0));
-    let mix: Vector = $derived(v1.clone().mix(v2, 0.5));
-    let mixX: Vector = $derived(v1.clone().mixX(v2, 0.5));
-    let mixY: Vector = $derived(v1.clone().mixY(v2, 0.5));
+
+    let mixFactor = $state(0.5);
+    let mix: Vector = $derived(v1.clone().mix(v2, mixFactor));
+    let mixX: Vector = $derived(v1.clone().mixX(v2, mixFactor));
+    let mixY: Vector = $derived(v1.clone().mixY(v2, mixFactor));
+
     let projectOnto: Vector = $derived(v1.clone().projectOnto(v2));
 
     const baseVectors = $derived([
@@ -33,7 +36,7 @@
     const vectorsMix = $derived([
         ...baseVectors,
         {
-            name: 'v1.mix(v2, 0.5)',
+            name: `v1.mix(v2, ${mixFactor})`,
             vec: mix,
             color: '#6e6ef4',
             isDraggable: false
@@ -43,7 +46,7 @@
     const vectorsMixX = $derived([
         ...baseVectors,
         {
-            name: 'v1.mixX(v2, 0.5)',
+            name: `v1.mixX(v2, ${mixFactor})`,
             vec: mixX,
             color: '#f46ef4',
             isDraggable: false
@@ -53,7 +56,7 @@
     const vectorsMixY = $derived([
         ...baseVectors,
         {
-            name: 'v1.mixY(v2, 0.5)',
+            name: `v1.mixY(v2, ${mixFactor})`,
             vec: mixY,
             color: '#b16ef4',
             isDraggable: false
@@ -73,17 +76,20 @@
 
 <h2>Interpolation</h2>
 
+<span>Mix factor:</span>
+<input bind:value={mixFactor} type="number" min="0" max="1" step="0.1" />
+
 <div class="container">
     <div>
-        <h3><code>v1.mix(v2, 0.5)</code></h3>
+        <h3><code>v1.mix(v2, {mixFactor})</code></h3>
         <VectorsDisplay vectors={vectorsMix}></VectorsDisplay>
     </div>
     <div>
-        <h3><code>v1.mixX(v2, 0.5)</code></h3>
+        <h3><code>v1.mixX(v2, {mixFactor})</code></h3>
         <VectorsDisplay vectors={vectorsMixX}></VectorsDisplay>
     </div>
     <div>
-        <h3><code>v1.mixY(v2, 0.5)</code></h3>
+        <h3><code>v1.mixY(v2, {mixFactor})</code></h3>
         <VectorsDisplay vectors={vectorsMixY}></VectorsDisplay>
     </div>
     <div>
