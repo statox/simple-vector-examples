@@ -7,4 +7,5 @@
 <ul>
     <li><a href={resolve('/angle')}>Angle examples</a></li>
     <li><a href={resolve('/angleWith')}>AngleWith examples</a></li>
+    <li><a href={resolve('/interpolation')}>Interpolation examples</a></li>
 </ul>
