@@ -10,7 +10,8 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 
 - [Angle methods]({resolve('/angle')})
 - [AngleWith methods]({resolve('/angleWith')})
+- [Comparison methods]({resolve('/comparison')})
 - [Distance methods]({resolve('/distance')})
 - [Interpolation methods]({resolve('/interpolation')})
-- [Product methods]({resolve('/product')})
 - [Inversion methods]({resolve('/inversion')})
+- [Product methods]({resolve('/product')})
