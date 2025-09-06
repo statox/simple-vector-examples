@@ -1,0 +1,15 @@
+<script>
+    import { resolve } from '$app/paths';
+</script>
+
+This page gathers some interactive examples for the npm package [`simple-vector`](https://www.npmjs.com/package/simple-vector).
+
+You can find the complete documentation on [this page](https://statox.github.io/simple-vector.ts/index.html).
+
+If you find an error please fill an issue [on Github](https://github.com/statox/simple-vector-examples/issues).
+
+- [Angle methods]({resolve('/angle')})
+- [AngleWith methods]({resolve('/angleWith')})
+- [Distance methods]({resolve('/distance')})
+- [Interpolation methods]({resolve('/interpolation')})
+- [Product methods]({resolve('/product')})
