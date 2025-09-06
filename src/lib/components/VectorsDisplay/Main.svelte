@@ -54,14 +54,11 @@
                     p5.height / 2 - p5.mouseY
                 ).fixPrecision(0);
 
-                for (let i = 0; i < vectors.length; i++) {
-                    const v = vectors[i];
-                    if (!v.isDraggable) {
-                        continue;
-                    }
-
+                const draggableVectors = vectors.filter((v) => v.isDraggable);
+                for (const v of draggableVectors) {
                     const d = mouse.distance(v.vec);
-                    if (d < 30 && v.onUpdate) {
+
+                    if (v.onUpdate && (d < 30 || draggableVectors.length === 1)) {
                         v.onUpdate(mouse);
                         break;
                     }
