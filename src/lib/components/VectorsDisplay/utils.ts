@@ -7,3 +7,8 @@ export type VectorProp = {
     onUpdate?: (newVector: Vector) => void;
     isDraggable: boolean;
 };
+
+export type GridProp = {
+    size: number;
+    graduation: number;
+};

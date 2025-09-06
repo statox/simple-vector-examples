@@ -1,4 +1,4 @@
 import VectorsDisplay from './Main.svelte';
-import type { VectorProp } from './utils';
+import type { GridProp, VectorProp } from './utils';
 
-export { VectorsDisplay, type VectorProp };
+export { VectorsDisplay, type GridProp, type VectorProp };

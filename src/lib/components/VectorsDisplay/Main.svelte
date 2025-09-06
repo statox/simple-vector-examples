@@ -1,22 +1,25 @@
 <script lang="ts">
     import { Vector } from 'simple-vector';
-    import type { VectorProp } from './utils';
+    import type { GridProp, VectorProp } from './utils';
     import type p5 from 'p5';
     import P5, { type Sketch } from 'p5-svelte';
     import { onDestroy } from 'svelte';
 
     interface Props {
         vectors: VectorProp[];
+        grid: GridProp;
     }
 
-    let { vectors }: Props = $props();
+    let { grid, vectors }: Props = $props();
 
     let _p5: p5;
+    let scale = $state(1);
 
     const drawVectorAsArrow = (p5: p5, v: Vector) => {
-        const x = p5.width / 2 + v.x;
-        const y = p5.height / 2 - v.y;
+        const x = p5.width / 2 + scale * v.x;
+        const y = p5.height / 2 - scale * v.y;
 
+        p5.strokeWeight(3);
         try {
             const rightArrow = v.clone().invert().rotateByDeg(45).resize(10);
             p5.line(x, y, x + rightArrow.x, y - rightArrow.y);
@@ -30,8 +33,31 @@
         }
     };
 
+    const drawGrid = (p5: p5, grid: GridProp) => {
+        p5.stroke(125, 80);
+        p5.strokeWeight(1);
+        for (let i = 0; i < grid.size / grid.graduation; i++) {
+            const xPlus = p5.width / 2 + i * scale;
+            p5.line(xPlus, 0, xPlus, p5.height);
+            const xMinus = p5.width / 2 - i * scale;
+            p5.line(xMinus, 0, xMinus, p5.height);
+            const yPlus = p5.height / 2 + i * scale;
+            p5.line(0, yPlus, p5.width, yPlus);
+            const yMinus = p5.height / 2 - i * scale;
+            p5.line(0, yMinus, p5.width, yMinus);
+        }
+    };
+
     const mouseIsInCanvas = (p5: p5) => {
         return p5.mouseX >= 0 && p5.mouseY >= 0 && p5.mouseX < p5.width && p5.mouseY < p5.height;
+    };
+
+    const updateScale = (p5: p5, grid: GridProp) => {
+        scale = p5.width / grid.size;
+    };
+
+    const screenToVectorCoord = (p5: p5, v: Vector) => {
+        return new Vector(v.x - p5.width / 2, p5.height / 2 - v.y).divideScalar(scale);
     };
 
     const sketch: Sketch = (p5) => {
@@ -41,24 +67,23 @@
         };
 
         p5.draw = () => {
+            updateScale(p5, grid);
             p5.background(240, 240, 240);
 
+            drawGrid(p5, grid);
             for (const { vec, color } of vectors) {
                 p5.stroke(color);
                 drawVectorAsArrow(p5, vec);
             }
 
             if (p5.mouseIsPressed && mouseIsInCanvas(p5)) {
-                const mouse = new Vector(
-                    p5.mouseX - p5.width / 2,
-                    p5.height / 2 - p5.mouseY
-                ).fixPrecision(0);
+                const mouse = screenToVectorCoord(p5, new Vector(p5.mouseX, p5.mouseY));
 
                 const draggableVectors = vectors.filter((v) => v.isDraggable);
                 for (const v of draggableVectors) {
                     const d = mouse.distance(v.vec);
 
-                    if (v.onUpdate && (d < 30 || draggableVectors.length === 1)) {
+                    if (v.onUpdate && (d < grid.graduation / 2 || draggableVectors.length === 1)) {
                         v.onUpdate(mouse);
                         break;
                     }
@@ -84,6 +109,6 @@
 <style>
     .vector-values {
         display: grid;
-        grid-template-columns: 200px 200px;
+        grid-template-columns: 200px 400px;
     }
 </style>

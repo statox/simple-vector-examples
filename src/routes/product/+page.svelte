@@ -2,8 +2,8 @@
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
-    let v1: Vector = $state(new Vector(0, 100));
-    let v2: Vector = $state(new Vector(50, 0));
+    let v1: Vector = $state(new Vector(0, 4));
+    let v2: Vector = $state(new Vector(2.5, 0));
     const v1Color = '#FF0000';
     const v2Color = '#00FF00';
 
@@ -13,7 +13,7 @@
             vec: v1,
             color: v1Color,
             onUpdate: (newVector: Vector) => {
-                v1 = newVector.clone();
+                v1 = newVector.clone().fixPrecision(1);
             },
             isDraggable: true
         },
@@ -22,7 +22,7 @@
             vec: v2,
             color: v2Color,
             onUpdate: (newVector: Vector) => {
-                v2 = newVector.clone();
+                v2 = newVector.clone().fixPrecision(1);
             },
             isDraggable: true
         }
@@ -31,7 +31,7 @@
 
 <h2>Product</h2>
 
-<VectorsDisplay {vectors}></VectorsDisplay>
+<VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 
 <div class="results">
     <div><code>v1.dot(v2)</code></div>

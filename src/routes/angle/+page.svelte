@@ -2,15 +2,15 @@
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
-    let v: Vector = $state(new Vector(0, 100));
+    let v: Vector = $state(new Vector(0, 2.5));
 
     const vectors = $derived([
         {
             name: 'v',
             vec: v,
-            color: '#000000',
+            color: '#FF0000',
             onUpdate: (newVector: Vector) => {
-                v = newVector.clone();
+                v = newVector.clone().fixPrecision(1);
             },
             isDraggable: true
         }
@@ -19,7 +19,7 @@
 
 <h2>Angle</h2>
 
-<VectorsDisplay {vectors}></VectorsDisplay>
+<VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 
 <div class="results">
     <div><code>v.horizontalAngle()</code></div>

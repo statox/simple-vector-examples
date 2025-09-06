@@ -2,8 +2,8 @@
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
-    let v1: Vector = $state(new Vector(0, 100));
-    let v2: Vector = $state(new Vector(100, 0));
+    let v1: Vector = $state(new Vector(0, 3));
+    let v2: Vector = $state(new Vector(3, 0));
 
     let mixFactor = $state(0.5);
     let mix: Vector = $derived(v1.clone().mix(v2, mixFactor));
@@ -18,7 +18,7 @@
             vec: v1,
             color: '#FF0000',
             onUpdate: (newVector: Vector) => {
-                v1 = newVector.clone();
+                v1 = newVector.clone().fixPrecision(1);
             },
             isDraggable: true
         },
@@ -27,7 +27,7 @@
             vec: v2,
             color: '#00FF00',
             onUpdate: (newVector: Vector) => {
-                v2 = newVector.clone();
+                v2 = newVector.clone().fixPrecision(1);
             },
             isDraggable: true
         }
@@ -72,6 +72,8 @@
             isDraggable: false
         }
     ]);
+
+    const grid = { size: 10, graduation: 1 };
 </script>
 
 <h2>Interpolation</h2>
@@ -82,19 +84,19 @@
 <div class="results">
     <div>
         <h3><code>v1.mix(v2, {mixFactor})</code></h3>
-        <VectorsDisplay vectors={vectorsMix}></VectorsDisplay>
+        <VectorsDisplay {grid} vectors={vectorsMix}></VectorsDisplay>
     </div>
     <div>
         <h3><code>v1.mixX(v2, {mixFactor})</code></h3>
-        <VectorsDisplay vectors={vectorsMixX}></VectorsDisplay>
+        <VectorsDisplay {grid} vectors={vectorsMixX}></VectorsDisplay>
     </div>
     <div>
         <h3><code>v1.mixY(v2, {mixFactor})</code></h3>
-        <VectorsDisplay vectors={vectorsMixY}></VectorsDisplay>
+        <VectorsDisplay {grid} vectors={vectorsMixY}></VectorsDisplay>
     </div>
     <div>
         <h3><code>v1.projectOnto(v2)</code></h3>
-        <VectorsDisplay vectors={vectorsProjectOnto}></VectorsDisplay>
+        <VectorsDisplay {grid} vectors={vectorsProjectOnto}></VectorsDisplay>
     </div>
 </div>
 
