@@ -30,6 +30,10 @@
         }
     };
 
+    const mouseIsInCanvas = (p5: p5) => {
+        return p5.mouseX >= 0 && p5.mouseY >= 0 && p5.mouseX < p5.width && p5.mouseY < p5.height;
+    };
+
     const sketch: Sketch = (p5) => {
         p5.setup = () => {
             _p5 = p5;
@@ -44,7 +48,7 @@
                 drawVectorAsArrow(p5, vec);
             }
 
-            if (p5.mouseIsPressed) {
+            if (p5.mouseIsPressed && mouseIsInCanvas(p5)) {
                 const mouse = new Vector(
                     p5.mouseX - p5.width / 2,
                     p5.height / 2 - p5.mouseY
