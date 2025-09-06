@@ -37,13 +37,13 @@
         p5.stroke(125, 80);
         p5.strokeWeight(1);
         for (let i = 0; i < grid.size / grid.graduation; i++) {
-            const xPlus = p5.width / 2 + i * scale;
+            const xPlus = p5.width / 2 + i * scale * grid.graduation;
             p5.line(xPlus, 0, xPlus, p5.height);
-            const xMinus = p5.width / 2 - i * scale;
+            const xMinus = p5.width / 2 - i * scale * grid.graduation;
             p5.line(xMinus, 0, xMinus, p5.height);
-            const yPlus = p5.height / 2 + i * scale;
+            const yPlus = p5.height / 2 + i * scale * grid.graduation;
             p5.line(0, yPlus, p5.width, yPlus);
-            const yMinus = p5.height / 2 - i * scale;
+            const yMinus = p5.height / 2 - i * scale * grid.graduation;
             p5.line(0, yMinus, p5.width, yMinus);
         }
     };
