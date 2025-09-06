@@ -1,22 +1,27 @@
 <script lang="ts">
-    import { P5_1vector } from '$lib/components/P5_1Vector';
+    import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
     let v: Vector = $state(new Vector(0, 100));
 
-    const onVectorUpdate = (newVector: Vector) => {
-        v = newVector.clone();
-    };
+    const vectors = $derived([
+        {
+            name: 'v',
+            vec: v,
+            color: '#000000',
+            onUpdate: (newVector: Vector) => {
+                v = newVector.clone();
+            },
+            isDraggable: true
+        }
+    ]);
 </script>
 
 <h2>Angle</h2>
 
-<P5_1vector {v} {onVectorUpdate}></P5_1vector>
+<VectorsDisplay {vectors}></VectorsDisplay>
 
 <div class="container">
-    <div><code>v</code></div>
-    <div>{v.toString()}</div>
-
     <div><code>v.horizontalAngle()</code></div>
     <div>{v.horizontalAngle()}</div>
 
