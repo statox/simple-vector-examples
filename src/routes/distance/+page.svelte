@@ -33,7 +33,7 @@
 
 <VectorsDisplay {vectors}></VectorsDisplay>
 
-<div class="container">
+<div class="results">
     <div><code>v1.absDistanceX(v2)</code></div>
     <div>{v1.absDistanceX(v2)}</div>
 
@@ -54,8 +54,8 @@
 </div>
 
 <style>
-    .container {
+    .results {
         display: grid;
-        grid-template-columns: 200px 200px;
+        grid-template-columns: 300px 300px;
     }
 </style>

@@ -7,8 +7,10 @@
 
 <svelte:head>
     <link rel="icon" href={favicon} />
+    <script src="https://kit.fontawesome.com/cc32401bee.js" crossorigin="anonymous"></script>
 </svelte:head>
 
-<Header />
-
-{@render children?.()}
+<div class="container">
+    <Header />
+    {@render children?.()}
+</div>

@@ -79,7 +79,7 @@
 <span>Mix factor:</span>
 <input bind:value={mixFactor} type="number" min="0" max="1" step="0.1" />
 
-<div class="container">
+<div class="results">
     <div>
         <h3><code>v1.mix(v2, {mixFactor})</code></h3>
         <VectorsDisplay vectors={vectorsMix}></VectorsDisplay>
@@ -99,7 +99,7 @@
 </div>
 
 <style>
-    .container {
+    .results {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
