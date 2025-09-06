@@ -9,4 +9,5 @@
     <li><a href={resolve('/angleWith')}>AngleWith examples</a></li>
     <li><a href={resolve('/distance')}>Distance examples</a></li>
     <li><a href={resolve('/interpolation')}>Interpolation examples</a></li>
+    <li><a href={resolve('/product')}>Product examples</a></li>
 </ul>
