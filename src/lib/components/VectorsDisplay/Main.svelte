@@ -17,13 +17,17 @@
         const x = p5.width / 2 + v.x;
         const y = p5.height / 2 - v.y;
 
-        p5.line(p5.width / 2, p5.height / 2, x, y);
+        try {
+            const rightArrow = v.clone().invert().rotateByDeg(45).resize(10);
+            p5.line(x, y, x + rightArrow.x, y - rightArrow.y);
 
-        const rightArrow = v.clone().invert().rotateByDeg(45).resize(10);
-        p5.line(x, y, x + rightArrow.x, y - rightArrow.y);
+            const leftArrow = v.clone().invert().rotateByDeg(-45).resize(10);
+            p5.line(x, y, x + leftArrow.x, y - leftArrow.y);
 
-        const leftArrow = v.clone().invert().rotateByDeg(-45).resize(10);
-        p5.line(x, y, x + leftArrow.x, y - leftArrow.y);
+            p5.line(p5.width / 2, p5.height / 2, x, y);
+        } catch {
+            p5.circle(p5.width / 2, p5.height / 2, 10);
+        }
     };
 
     const sketch: Sketch = (p5) => {
