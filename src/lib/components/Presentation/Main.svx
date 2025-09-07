@@ -14,5 +14,6 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 - [Distance methods]({resolve('/distance')})
 - [Interpolation methods]({resolve('/interpolation')})
 - [Inversion methods]({resolve('/inversion')})
+- [Magnitude methods]({resolve('/magnitude')})
 - [Product methods]({resolve('/product')})
 - [Rotation methods]({resolve('/rotation')})
