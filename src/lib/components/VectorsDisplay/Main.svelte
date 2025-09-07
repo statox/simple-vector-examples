@@ -14,6 +14,7 @@
 
     let _p5: p5;
     let scale = $state(1);
+    let draggedVectorIndex: number | null = null;
 
     const drawVectorAsArrow = (p5: p5, v: Vector) => {
         const x = p5.width / 2 + scale * v.x;
@@ -80,14 +81,28 @@
                 const mouse = screenToVectorCoord(p5, new Vector(p5.mouseX, p5.mouseY));
 
                 const draggableVectors = vectors.filter((v) => v.isDraggable);
-                for (const v of draggableVectors) {
-                    const d = mouse.distance(v.vec);
+                if (draggedVectorIndex !== null) {
+                    const vec = draggableVectors[draggedVectorIndex];
+                    if (vec.onUpdate) {
+                        vec.onUpdate(mouse);
+                    }
+                } else {
+                    for (let i = 0; i < draggableVectors.length; i++) {
+                        const v = draggableVectors[i];
+                        const d = mouse.distance(v.vec);
 
-                    if (v.onUpdate && (d < grid.graduation / 2 || draggableVectors.length === 1)) {
-                        v.onUpdate(mouse);
-                        break;
+                        if (
+                            v.onUpdate &&
+                            (d < grid.graduation / 2 || draggableVectors.length === 1)
+                        ) {
+                            draggedVectorIndex = i;
+                            v.onUpdate(mouse);
+                            break;
+                        }
                     }
                 }
+            } else {
+                draggedVectorIndex = null;
             }
         };
     };
