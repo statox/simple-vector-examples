@@ -28,7 +28,7 @@
         "p5-svelte": "^3.1.2",
         "prettier": "^3.4.2",
         "prettier-plugin-svelte": "^3.3.3",
-        "simple-vector": "^0.0.8",
+        "simple-vector": "^0.0.9",
         "svelte": "^5.0.0",
         "svelte-check": "^4.0.0",
         "typescript": "^5.0.0",
