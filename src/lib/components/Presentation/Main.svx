@@ -11,6 +11,7 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 - [Angle methods]({resolve('/angle')})
 - [AngleWith methods]({resolve('/angleWith')})
 - [Comparison methods]({resolve('/comparison')})
+- [Constructors methods]({resolve('/constructors')})
 - [Distance methods]({resolve('/distance')})
 - [Interpolation methods]({resolve('/interpolation')})
 - [Inversion methods]({resolve('/inversion')})
