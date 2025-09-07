@@ -18,4 +18,5 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 - [Magnitude - Length methods]({resolve('/magnitude_length')})
 - [Magnitude - Limit methods]({resolve('/magnitude_limit')})
 - [Product methods]({resolve('/product')})
+- [Randomization methods]({resolve('/randomization')})
 - [Rotation methods]({resolve('/rotation')})
