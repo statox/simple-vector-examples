@@ -1,11 +1,9 @@
 <script lang="ts">
     import Clamp from './clamp.svelte';
     import ClampAxes from './clampAxes.svelte';
-    import Limit from './limit.svelte';
 </script>
 
-<h2>Magnitude</h2>
+<h2>Magnitude - Clamp</h2>
 
 <Clamp />
 <ClampAxes />
-<Limit />
