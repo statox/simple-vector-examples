@@ -33,6 +33,9 @@
 
     <div><code>v.verticalAngleDeg()</code></div>
     <div>{v.verticalAngleDeg()}</div>
+
+    <div><code>v1.slope()</code></div>
+    <div>{v.slope()}</div>
 </div>
 
 <style>
