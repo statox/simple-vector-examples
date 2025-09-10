@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
+    import 'missing.css';
 
     const darkModeEnabled = writable<boolean>(false);
     const buttonClassLight = 'fas fa-moon';
@@ -39,8 +40,6 @@
 </script>
 
 <svelte:head>
-    <!-- https://missing.style/ -->
-    <link rel="stylesheet" href="https://unpkg.com/missing.css@1.2.0" />
     <meta name="color-scheme" content={theme} />
 </svelte:head>
 
@@ -51,12 +50,9 @@
 <style>
     button {
         background: none;
-        color: var(--nc-lk-1);
         padding: 0;
-    }
-    button:hover {
-        background: none;
-        color: var(--nc-lk-2);
+        border: none;
+        cursor: pointer;
     }
     .fas {
         font-size: 1.5em;
