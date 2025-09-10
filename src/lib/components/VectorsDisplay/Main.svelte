@@ -112,7 +112,9 @@
     });
 </script>
 
-<P5 {sketch} />
+<div class="canvas-container">
+    <P5 {sketch} />
+</div>
 
 <div class="vector-values">
     {#each vectors as v (v.name)}
@@ -122,6 +124,13 @@
 </div>
 
 <style>
+    .canvas-container {
+        /* Prevent the user from scrolling the page when dragging a vector on mobile */
+        touch-action: none;
+        /* Also prevent text selection or context menu appearance */
+        user-select: none;
+        -webkit-user-select: none;
+    }
     .vector-values {
         display: grid;
         grid-template-columns: 200px 400px;
