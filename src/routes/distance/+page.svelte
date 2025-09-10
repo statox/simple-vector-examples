@@ -51,6 +51,12 @@
 
     <div><code>v1.distanceSq(v2)</code></div>
     <div>{v1.distanceSq(v2)}</div>
+
+    <div><code>v1.distanceManhattan(v2)</code></div>
+    <div>{v1.distanceManhattan(v2)}</div>
+
+    <div><code>v1.distanceChebyshev(v2)</code></div>
+    <div>{v1.distanceChebyshev(v2)}</div>
 </div>
 
 <style>
