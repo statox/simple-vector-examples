@@ -30,11 +30,11 @@
     ]);
 
     const results = $derived([
-        { code: 'v1.absDistanceX(v2)', result: v1.absDistanceX(v2) },
-        { code: 'v1.distanceX(v2)', result: v1.distanceX(v2) },
+        { code: 'v1.absDistanceX(v2)', result: v1.absDistanceX(v2).toFixed(2) },
+        { code: 'v1.distanceX(v2)', result: v1.distanceX(v2).toFixed(2) },
 
-        { code: 'v1.absDistanceY(v2)', result: v1.absDistanceY(v2) },
-        { code: 'v1.distanceY(v2)', result: v1.distanceY(v2) },
+        { code: 'v1.absDistanceY(v2)', result: v1.absDistanceY(v2).toFixed(2) },
+        { code: 'v1.distanceY(v2)', result: v1.distanceY(v2).toFixed(2) },
 
         { code: 'v1.distance(v2)', result: v1.distance(v2).toFixed(2) },
         { code: 'v1.distanceSq(v2)', result: v1.distanceSq(v2).toFixed(2) },
