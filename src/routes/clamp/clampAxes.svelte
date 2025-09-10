@@ -31,6 +31,18 @@
             return v1.clone().zero();
         }
     });
+    let clampedAxes: Vector = $derived.by(() => {
+        try {
+            if (minBoundEnabled) {
+                return v1.clone().clampAxes(clampMax, clampMin);
+            }
+
+            return v1.clone().clampY(clampMax);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_e) {
+            return v1.clone().zero();
+        }
+    });
 
     const baseVectors = $derived([
         {
@@ -66,6 +78,17 @@
             isDraggable: false
         }
     ]);
+    const vectorsClampAxes = $derived([
+        ...baseVectors,
+        {
+            name: minBoundEnabled
+                ? `v1.clampAxes(${clampMax}, ${clampMin})`
+                : `v1.clampAxes(${clampMax})`,
+            vec: clampedAxes,
+            color: '#b16ef4',
+            isDraggable: false
+        }
+    ]);
 
     const grid = { size: 10, graduation: 1 };
 </script>
@@ -96,6 +119,15 @@
             <h3><code>v1.clampX({clampMax})</code></h3>
         {/if}
         <VectorsDisplay {grid} vectors={vectorsClampY}></VectorsDisplay>
+    </div>
+
+    <div>
+        {#if minBoundEnabled}
+            <h3><code>v1.clampAxes({clampMax}, {clampMin})</code></h3>
+        {:else}
+            <h3><code>v1.clampAxes({clampMax})</code></h3>
+        {/if}
+        <VectorsDisplay {grid} vectors={vectorsClampAxes}></VectorsDisplay>
     </div>
 </div>
 

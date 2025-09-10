@@ -10,10 +10,10 @@
     let clamped: Vector = $derived.by(() => {
         try {
             if (minBoundEnabled) {
-                return v1.clone().clamp(clampMax, clampMin);
+                return v1.clone().clampMag(clampMax, clampMin);
             }
 
-            return v1.clone().clamp(clampMax);
+            return v1.clone().clampMag(clampMax);
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (_e) {
             return v1.clone().zero();
@@ -35,7 +35,9 @@
     const vectorsClamp = $derived([
         ...baseVectors,
         {
-            name: minBoundEnabled ? `v1.clamp(${clampMax}, ${clampMin})` : `v1.clamp(${clampMax})`,
+            name: minBoundEnabled
+                ? `v1.clampMag(${clampMax}, ${clampMin})`
+                : `v1.clampMag(${clampMax})`,
             vec: clamped,
             color: '#6e6ef4',
             isDraggable: false
@@ -57,9 +59,9 @@
 <div class="results">
     <div>
         {#if minBoundEnabled}
-            <h3><code>v1.clamp({clampMax}, {clampMin})</code></h3>
+            <h3><code>v1.clampMag({clampMax}, {clampMin})</code></h3>
         {:else}
-            <h3><code>v1.clamp({clampMax})</code></h3>
+            <h3><code>v1.clampMag({clampMax})</code></h3>
         {/if}
         <VectorsDisplay {grid} vectors={vectorsClamp}></VectorsDisplay>
     </div>

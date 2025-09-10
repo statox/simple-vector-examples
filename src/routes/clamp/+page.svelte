@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Clamp from './clamp.svelte';
+    import ClampMag from './clampMag.svelte';
     import ClampAxes from './clampAxes.svelte';
 </script>
 
 <h2>Magnitude - Clamp</h2>
 
-<Clamp />
+<ClampMag />
 <ClampAxes />

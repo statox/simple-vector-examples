@@ -10,12 +10,12 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 
 - [Angle methods]({resolve('/angle')})
 - [AngleWith methods]({resolve('/angleWith')})
+- [Clamp methods]({resolve('/clamp')})
 - [Comparison methods]({resolve('/comparison')})
 - [Constructors methods]({resolve('/constructors')})
 - [Distance methods]({resolve('/distance')})
 - [Interpolation methods]({resolve('/interpolation')})
 - [Inversion methods]({resolve('/inversion')})
-- [Magnitude - Clamp methods]({resolve('/magnitude_clamp')})
 - [Magnitude - Length methods]({resolve('/magnitude_length')})
 - [Magnitude - Limit methods]({resolve('/magnitude_limit')})
 - [Product methods]({resolve('/product')})
