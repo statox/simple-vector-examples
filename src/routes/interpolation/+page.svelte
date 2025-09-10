@@ -2,8 +2,8 @@
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
-    let v1: Vector = $state(new Vector(0, 3));
-    let v2: Vector = $state(new Vector(3, 0));
+    let v1: Vector = $state(new Vector(3, 0));
+    let v2: Vector = $state(new Vector(0, 3));
 
     let mixFactor = $state(0.5);
     let mix: Vector = $derived(v1.clone().mix(v2, mixFactor));
@@ -16,7 +16,7 @@
         {
             name: 'v1',
             vec: v1,
-            color: '#FF0000',
+            color: '#00FF00',
             onUpdate: (newVector: Vector) => {
                 v1 = newVector.clone().fixPrecision(1);
             },
@@ -25,7 +25,7 @@
         {
             name: 'v2',
             vec: v2,
-            color: '#00FF00',
+            color: '#FF0000',
             onUpdate: (newVector: Vector) => {
                 v2 = newVector.clone().fixPrecision(1);
             },

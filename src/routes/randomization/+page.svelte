@@ -3,7 +3,7 @@
     import { Vector } from 'simple-vector';
 
     let topLeft: Vector = $state(new Vector(-3, 3));
-    let bottomRight: Vector = $state(new Vector(3, 3));
+    let bottomRight: Vector = $state(new Vector(3, -3));
 
     let randomized: Vector = $derived(new Vector().randomize(topLeft, bottomRight));
     let randomizedX: Vector = $derived(new Vector().randomizeX(topLeft, bottomRight));
@@ -13,7 +13,7 @@
         {
             name: 'topLeft',
             vec: topLeft,
-            color: '#FF0000',
+            color: '#00FF00',
             onUpdate: (newVector: Vector) => {
                 topLeft = newVector.clone().fixPrecision(1);
             },
@@ -22,7 +22,7 @@
         {
             name: 'bottomRight',
             vec: bottomRight,
-            color: '#00FF00',
+            color: '#FF0000',
             onUpdate: (newVector: Vector) => {
                 bottomRight = newVector.clone().fixPrecision(1);
             },

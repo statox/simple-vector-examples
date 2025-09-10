@@ -4,14 +4,12 @@
 
     let v1: Vector = $state(new Vector(0, 5));
     let v2: Vector = $state(new Vector(2.5, 0));
-    const v1Color = '#FF0000';
-    const v2Color = '#00FF00';
 
     const vectors = $derived([
         {
             name: 'v1',
             vec: v1,
-            color: v1Color,
+            color: '#00FF00',
             onUpdate: (newVector: Vector) => {
                 v1 = newVector.clone().fixPrecision(1);
             },
@@ -20,7 +18,7 @@
         {
             name: 'v2',
             vec: v2,
-            color: v2Color,
+            color: '#FF0000',
             onUpdate: (newVector: Vector) => {
                 v2 = newVector.clone().fixPrecision(1);
             },

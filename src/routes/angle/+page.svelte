@@ -8,7 +8,7 @@
         {
             name: 'v',
             vec: v,
-            color: '#FF0000',
+            color: '#00FF00',
             onUpdate: (newVector: Vector) => {
                 v = newVector.clone().fixPrecision(1);
             },
