@@ -2,11 +2,9 @@
     import { resolve } from '$app/paths';
 </script>
 
-This page gathers some interactive examples for the npm package [`simple-vector`](https://www.npmjs.com/package/simple-vector).
+This page gathers some interactive examples for the npm package [`simple-vector`](https://www.npmjs.com/package/simple-vector). You can find the complete documentation on [this page](https://statox.github.io/simple-vector.ts/index.html).
 
-You can find the complete documentation on [this page](https://statox.github.io/simple-vector.ts/index.html).
-
-If you find an error please fill an issue [on Github](https://github.com/statox/simple-vector-examples/issues).
+In the visualizations drag the red and green vectors which are used as input vectors and observe how the other vectors or the numerical results evolve as you change the inputs.
 
 - [Angle methods]({resolve('/angle')})
 - [AngleWith methods]({resolve('/angleWith')})
@@ -21,3 +19,5 @@ If you find an error please fill an issue [on Github](https://github.com/statox/
 - [Product methods]({resolve('/product')})
 - [Randomization methods]({resolve('/randomization')})
 - [Rotation methods]({resolve('/rotation')})
+
+If you find an error please fill an issue [on Github](https://github.com/statox/simple-vector-examples/issues).
