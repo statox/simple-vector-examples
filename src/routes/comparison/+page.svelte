@@ -37,6 +37,9 @@
     <div><code>v1.isEqualTo(v2)</code></div>
     <div class:green={v1.isEqualTo(v2)}>{v1.isEqualTo(v2)}</div>
 
+    <div><code>v1.isCloseTo(v2, 0.2)</code></div>
+    <div class:green={v1.isCloseTo(v2, 0.2)}>{v1.isCloseTo(v2, 0.2)}</div>
+
     <div><code>v1.isParallelTo(v2)</code></div>
     <div class:green={v1.isParallelTo(v2)}>{v1.isParallelTo(v2)}</div>
 
