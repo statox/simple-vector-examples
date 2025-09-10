@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { FixedResultsInfo } from '$lib/components/FixedResultsInfo';
     import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
@@ -19,11 +20,11 @@
     ]);
 
     const results = $derived([
-        { code: 'v.horizontalAngle()', result: v.horizontalAngle() },
-        { code: 'v.horizontalAngleDeg()', result: v.horizontalAngleDeg() },
-        { code: 'v.verticalAngle()', result: v.verticalAngle() },
-        { code: 'v.verticalAngleDeg()', result: v.verticalAngleDeg() },
-        { code: 'v.slope()', result: v.slope() }
+        { code: 'v.horizontalAngle()', result: v.horizontalAngle().toFixed(3) },
+        { code: 'v.verticalAngle()', result: v.verticalAngle().toFixed(3) },
+        { code: 'v.horizontalAngleDeg()', result: v.horizontalAngleDeg().toFixed(0) },
+        { code: 'v.verticalAngleDeg()', result: v.verticalAngleDeg().toFixed(0) },
+        { code: 'v.slope()', result: v.slope().toFixed(3) }
     ]);
 </script>
 
@@ -31,3 +32,4 @@
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 <MethodsResults {results} />
+<FixedResultsInfo />

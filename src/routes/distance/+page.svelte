@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { FixedResultsInfo } from '$lib/components/FixedResultsInfo';
     import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
@@ -35,11 +36,11 @@
         { code: 'v1.absDistanceY(v2)', result: v1.absDistanceY(v2) },
         { code: 'v1.distanceY(v2)', result: v1.distanceY(v2) },
 
-        { code: 'v1.distance(v2)', result: v1.distance(v2) },
-        { code: 'v1.distanceSq(v2)', result: v1.distanceSq(v2) },
+        { code: 'v1.distance(v2)', result: v1.distance(v2).toFixed(2) },
+        { code: 'v1.distanceSq(v2)', result: v1.distanceSq(v2).toFixed(2) },
 
-        { code: 'v1.distanceManhattan(v2)', result: v1.distanceManhattan(v2) },
-        { code: 'v1.distanceChebyshev(v2)', result: v1.distanceChebyshev(v2) }
+        { code: 'v1.distanceManhattan(v2)', result: v1.distanceManhattan(v2).toFixed(1) },
+        { code: 'v1.distanceChebyshev(v2)', result: v1.distanceChebyshev(v2).toFixed(1) }
     ]);
 </script>
 
@@ -47,3 +48,4 @@
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 <MethodsResults {results} />
+<FixedResultsInfo />

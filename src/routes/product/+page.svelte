@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { FixedResultsInfo } from '$lib/components/FixedResultsInfo';
     import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
@@ -29,10 +30,10 @@
     ]);
 
     const results = $derived([
-        { code: 'v1.dot(v2)', result: v1.dot(v2) },
-        { code: 'v2.dot(v1)', result: v2.dot(v1) },
-        { code: 'v1.cross(v2)', result: v1.cross(v2) },
-        { code: 'v2.cross(v1)', result: v2.cross(v1) }
+        { code: 'v1.dot(v2)', result: v1.dot(v2).toFixed(2) },
+        { code: 'v2.dot(v1)', result: v2.dot(v1).toFixed(2) },
+        { code: 'v1.cross(v2)', result: v1.cross(v2).toFixed(2) },
+        { code: 'v2.cross(v1)', result: v2.cross(v1).toFixed(2) }
     ]);
 </script>
 
@@ -40,3 +41,4 @@
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 <MethodsResults {results} />
+<FixedResultsInfo />
