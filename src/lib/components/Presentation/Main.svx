@@ -17,6 +17,7 @@ In the visualizations drag the red and green vectors which are used as input vec
 - [Limit methods]({resolve('/limit')})
 - [Product methods]({resolve('/product')})
 - [Randomization methods]({resolve('/randomization')})
+- [Reflect methods]({resolve('/reflect')})
 - [Resize methods]({resolve('/resize')})
 - [Rotation methods]({resolve('/rotation')})
 

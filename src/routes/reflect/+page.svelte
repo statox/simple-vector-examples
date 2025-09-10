@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay, type GridProp } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
     import type p5 from 'p5';
@@ -126,7 +127,7 @@
     });
 </script>
 
-<h2>Reflect</h2>
+<PageTitle title="Reflect methods" />
 
 <div>
     <p>
