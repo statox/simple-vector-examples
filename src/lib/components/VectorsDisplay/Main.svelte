@@ -16,12 +16,21 @@
     let scale = $state(1);
     let draggedVectorIndex: number | null = null;
 
-    const drawVectorAsArrow = (p5: p5, v: Vector) => {
+    const drawVectorAsArrow = (p5: p5, v: Vector, color: string, isDraggable: boolean) => {
         const x = p5.width / 2 + scale * v.x;
         const y = p5.height / 2 - scale * v.y;
 
-        p5.strokeWeight(3);
         try {
+            if (isDraggable) {
+                p5.strokeWeight(1);
+                p5.stroke(0, 50);
+                p5.noFill();
+                const screenV = new Vector(x, y);
+                p5.circle(screenV.x, screenV.y, grid.graduation * scale);
+            }
+
+            p5.stroke(color);
+            p5.strokeWeight(isDraggable ? 4 : 2);
             const rightArrow = v.clone().invert().rotateByDeg(45).resize(10);
             p5.line(x, y, x + rightArrow.x, y - rightArrow.y);
 
@@ -72,9 +81,8 @@
             p5.background(240, 240, 240);
 
             drawGrid(p5, grid);
-            for (const { vec, color } of vectors) {
-                p5.stroke(color);
-                drawVectorAsArrow(p5, vec);
+            for (const { vec, color, isDraggable } of vectors) {
+                drawVectorAsArrow(p5, vec, color, isDraggable);
             }
 
             if (p5.mouseIsPressed && mouseIsInCanvas(p5)) {
