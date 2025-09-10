@@ -14,10 +14,10 @@ In the visualizations drag the red and green vectors which are used as input vec
 - [Distance methods]({resolve('/distance')})
 - [Interpolation methods]({resolve('/interpolation')})
 - [Inversion methods]({resolve('/inversion')})
-- [Magnitude - Length methods]({resolve('/magnitude_length')})
-- [Magnitude - Limit methods]({resolve('/magnitude_limit')})
+- [Limit methods]({resolve('/limit')})
 - [Product methods]({resolve('/product')})
 - [Randomization methods]({resolve('/randomization')})
+- [Resize methods]({resolve('/resize')})
 - [Rotation methods]({resolve('/rotation')})
 
 If you find an error please fill an issue [on Github](https://github.com/statox/simple-vector-examples/issues).

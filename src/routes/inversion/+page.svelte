@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
@@ -53,7 +54,7 @@
     const grid = { size: 10, graduation: 1 };
 </script>
 
-<h2>Inversion</h2>
+<PageTitle title="Inversion methods" />
 
 <div class="results">
     <div>

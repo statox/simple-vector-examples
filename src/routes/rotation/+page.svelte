@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
@@ -47,7 +48,7 @@
     ]);
 </script>
 
-<h2>Rotation</h2>
+<PageTitle title="Rotation methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 

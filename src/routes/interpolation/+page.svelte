@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
@@ -76,7 +77,7 @@
     const grid = { size: 10, graduation: 1 };
 </script>
 
-<h2>Interpolation</h2>
+<PageTitle title="Interpolation methods" />
 
 <span>Mix factor:</span>
 <input bind:value={mixFactor} type="number" min="0" max="1" step="0.1" />

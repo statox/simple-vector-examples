@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
 
@@ -30,7 +31,7 @@
     ]);
 </script>
 
-<h2>Constructors</h2>
+<PageTitle title="Constructor methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
 
