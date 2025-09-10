@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
@@ -29,26 +30,15 @@
             isDraggable: true
         }
     ]);
+
+    const results = $derived([
+        { code: 'v.toArray()', result: resultingArray, resultIsCode: true },
+        { code: 'v.toObject()', result: resultingObject, resultIsCode: true },
+        { code: 'v.toPolar()', result: resultingPolar, resultIsCode: true }
+    ]);
 </script>
 
 <PageTitle title="Constructor methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
-
-<div class="results">
-    <div><code>v.toArray()</code></div>
-    <div><code>{resultingArray}</code></div>
-
-    <div><code>v.toObject()</code></div>
-    <div><code>{resultingObject}</code></div>
-
-    <div><code>v.toPolar()</code></div>
-    <div><code>{resultingPolar}</code></div>
-</div>
-
-<style>
-    .results {
-        display: grid;
-        grid-template-columns: 150px 1fr;
-    }
-</style>
+<MethodsResults {results} />

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
@@ -16,32 +17,17 @@
             isDraggable: true
         }
     ]);
+
+    const results = $derived([
+        { code: 'v.horizontalAngle()', result: v.horizontalAngle() },
+        { code: 'v.horizontalAngleDeg()', result: v.horizontalAngleDeg() },
+        { code: 'v.verticalAngle()', result: v.verticalAngle() },
+        { code: 'v.verticalAngleDeg()', result: v.verticalAngleDeg() },
+        { code: 'v.slope()', result: v.slope() }
+    ]);
 </script>
 
 <PageTitle title="Angle methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
-
-<div class="results">
-    <div><code>v.horizontalAngle()</code></div>
-    <div>{v.horizontalAngle()}</div>
-
-    <div><code>v.horizontalAngleDeg()</code></div>
-    <div>{v.horizontalAngleDeg()}</div>
-
-    <div><code>v.verticalAngle()</code></div>
-    <div>{v.verticalAngle()}</div>
-
-    <div><code>v.verticalAngleDeg()</code></div>
-    <div>{v.verticalAngleDeg()}</div>
-
-    <div><code>v1.slope()</code></div>
-    <div>{v.slope()}</div>
-</div>
-
-<style>
-    .results {
-        display: grid;
-        grid-template-columns: 300px 300px;
-    }
-</style>
+<MethodsResults {results} />

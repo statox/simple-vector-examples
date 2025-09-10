@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
@@ -26,39 +27,30 @@
             isDraggable: true
         }
     ]);
+
+    const results = $derived([
+        { code: 'v1.isEqualTo(v2)', result: v1.isEqualTo(v2), highlight: v1.isEqualTo(v2) },
+        {
+            code: 'v1.isCloseTo(v2, 0.2)',
+            result: v1.isCloseTo(v2, 0.2),
+            highlight: v1.isCloseTo(v2, 0.2)
+        },
+        {
+            code: 'v1.isParallelTo(v2)',
+            result: v1.isParallelTo(v2),
+            highlight: v1.isParallelTo(v2)
+        },
+        {
+            code: 'v1.isPerpendicularTo(v2)',
+            result: v1.isPerpendicularTo(v2),
+            highlight: v1.isPerpendicularTo(v2)
+        },
+        { code: 'v1.isZero()', result: v1.isZero(), highlight: v1.isZero() },
+        { code: 'v2.isZero()', result: v2.isZero(), highlight: v2.isZero() }
+    ]);
 </script>
 
 <PageTitle title="Comparison methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
-
-<div class="results">
-    <div><code>v1.isEqualTo(v2)</code></div>
-    <div class:green={v1.isEqualTo(v2)}>{v1.isEqualTo(v2)}</div>
-
-    <div><code>v1.isCloseTo(v2, 0.2)</code></div>
-    <div class:green={v1.isCloseTo(v2, 0.2)}>{v1.isCloseTo(v2, 0.2)}</div>
-
-    <div><code>v1.isParallelTo(v2)</code></div>
-    <div class:green={v1.isParallelTo(v2)}>{v1.isParallelTo(v2)}</div>
-
-    <div><code>v1.isPerpendicularTo(v2)</code></div>
-    <div class:green={v1.isPerpendicularTo(v2)}>{v1.isPerpendicularTo(v2)}</div>
-
-    <div><code>v1.isZero()</code></div>
-    <div class:green={v1.isZero()}>{v1.isZero()}</div>
-
-    <div><code>v2.isZero()</code></div>
-    <div class:green={v2.isZero()}>{v2.isZero()}</div>
-</div>
-
-<style>
-    .results {
-        display: grid;
-        grid-template-columns: 300px 300px;
-    }
-
-    .green {
-        color: #00ff00;
-    }
-</style>
+<MethodsResults {results} />

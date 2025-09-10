@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
@@ -26,29 +27,16 @@
             isDraggable: true
         }
     ]);
+
+    const results = $derived([
+        { code: 'v1.angleWith(v2)', result: v1.angleWith(v2) },
+        { code: 'v1.angleDegWith(v2)', result: v1.angleDegWith(v2) },
+        { code: 'v1.orientedAngleWith(v2)', result: v1.orientedAngleWith(v2) },
+        { code: 'v1.orientedAngleDegWith(v2)', result: v1.orientedAngleDegWith(v2) }
+    ]);
 </script>
 
 <PageTitle title="AngleWith methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
-
-<div class="results">
-    <div><code>v1.angleWith(v2)</code></div>
-    <div>{v1.angleWith(v2)}</div>
-
-    <div><code>v1.angleDegWith(v2)</code></div>
-    <div>{v1.angleDegWith(v2)}</div>
-
-    <div><code>v1.orientedAngleWith(v2)</code></div>
-    <div>{v1.orientedAngleWith(v2)}</div>
-
-    <div><code>v1.orientedAngleDegWith(v2)</code></div>
-    <div>{v1.orientedAngleDegWith(v2)}</div>
-</div>
-
-<style>
-    .results {
-        display: grid;
-        grid-template-columns: 300px 300px;
-    }
-</style>
+<MethodsResults {results} />

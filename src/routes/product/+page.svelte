@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { MethodsResults } from '$lib/components/MethodsResults';
     import { PageTitle } from '$lib/components/PageTitle';
     import { VectorsDisplay } from '$lib/components/VectorsDisplay';
     import { Vector } from 'simple-vector';
@@ -26,29 +27,16 @@
             isDraggable: true
         }
     ]);
+
+    const results = $derived([
+        { code: 'v1.dot(v2)', result: v1.dot(v2) },
+        { code: 'v2.dot(v1)', result: v2.dot(v1) },
+        { code: 'v1.cross(v2)', result: v1.cross(v2) },
+        { code: 'v2.cross(v1)', result: v2.cross(v1) }
+    ]);
 </script>
 
 <PageTitle title="Product methods" />
 
 <VectorsDisplay grid={{ size: 10, graduation: 1 }} {vectors}></VectorsDisplay>
-
-<div class="results">
-    <div><code>v1.dot(v2)</code></div>
-    <div>{v1.dot(v2)}</div>
-
-    <div><code>v2.dot(v1)</code></div>
-    <div>{v2.dot(v1)}</div>
-
-    <div><code>v1.cross(v2)</code></div>
-    <div>{v1.cross(v2)}</div>
-
-    <div><code>v2.cross(v1)</code></div>
-    <div>{v2.cross(v1)}</div>
-</div>
-
-<style>
-    .results {
-        display: grid;
-        grid-template-columns: 300px 300px;
-    }
-</style>
+<MethodsResults {results} />
