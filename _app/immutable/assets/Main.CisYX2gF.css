@@ -1,1 +1,0 @@
-.results.svelte-1s5b4t7{display:grid;grid-template-columns:300px 300px;margin-top:var(--gap)}.results.svelte-1s5b4t7 .highlight:where(.svelte-1s5b4t7){color:#0f0}@media (width<500px){.results.svelte-1s5b4t7{grid-template-columns:1fr}.results.svelte-1s5b4t7 div:where(.svelte-1s5b4t7):nth-child(2n){text-align:right}}
