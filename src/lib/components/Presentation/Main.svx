@@ -17,6 +17,7 @@ The examples are sorted by method category:
 - [Interpolation]({resolve('/interpolation')})
 - [Inversion]({resolve('/inversion')})
 - [Limit]({resolve('/limit')})
+- [Magnitude]({resolve('/magnitude')})
 - [Product]({resolve('/product')})
 - [Randomization]({resolve('/randomization')})
 - [Reflect]({resolve('/reflect')})
