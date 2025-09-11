@@ -118,9 +118,9 @@
 
     <div>
         {#if minBoundEnabled}
-            <h3><code>v1.clampX({clampMax}, {clampMin})</code></h3>
+            <h3><code>v1.clampY({clampMax}, {clampMin})</code></h3>
         {:else}
-            <h3><code>v1.clampX({clampMax})</code></h3>
+            <h3><code>v1.clampY({clampMax})</code></h3>
         {/if}
         <VectorsDisplay {grid} vectors={vectorsClampY}></VectorsDisplay>
     </div>
