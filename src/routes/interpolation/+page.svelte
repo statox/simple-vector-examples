@@ -84,16 +84,16 @@
 
 <div class="results">
     <div>
-        <h3><code>v1.mix(v2, {mixFactor})</code></h3>
-        <VectorsDisplay {grid} vectors={vectorsMix}></VectorsDisplay>
-    </div>
-    <div>
         <h3><code>v1.mixX(v2, {mixFactor})</code></h3>
         <VectorsDisplay {grid} vectors={vectorsMixX}></VectorsDisplay>
     </div>
     <div>
         <h3><code>v1.mixY(v2, {mixFactor})</code></h3>
         <VectorsDisplay {grid} vectors={vectorsMixY}></VectorsDisplay>
+    </div>
+    <div>
+        <h3><code>v1.mix(v2, {mixFactor})</code></h3>
+        <VectorsDisplay {grid} vectors={vectorsMix}></VectorsDisplay>
     </div>
     <div>
         <h3><code>v1.projectOnto(v2)</code></h3>
