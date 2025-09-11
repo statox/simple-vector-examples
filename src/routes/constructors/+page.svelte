@@ -6,6 +6,9 @@
 
     let v: Vector = $state(new Vector(0, 2.5));
 
+    const resultingString = $derived.by(() => {
+        return `"${v.toString()}"`;
+    });
     const resultingArray = $derived.by(() => {
         const a = v.toArray();
         return `[${a[0]}, ${a[1]}]`;
@@ -32,6 +35,7 @@
     ]);
 
     const results = $derived([
+        { code: 'v.toString()', result: resultingString, resultIsCode: true },
         { code: 'v.toArray()', result: resultingArray, resultIsCode: true },
         { code: 'v.toObject()', result: resultingObject, resultIsCode: true },
         { code: 'v.toPolar()', result: resultingPolar, resultIsCode: true }
