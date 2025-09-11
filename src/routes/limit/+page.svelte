@@ -58,8 +58,10 @@
 
 <PageTitle title="Limit methods" />
 
-<span>max</span><input type="number" bind:value={max} />
-<span>factor</span> <input type="number" bind:value={factor} />
+<div class="input-container">
+    <span>max</span><input type="number" bind:value={max} />
+    <span>factor</span> <input type="number" bind:value={factor} />
+</div>
 
 <div class="results">
     <div>
@@ -81,5 +83,10 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+    .input-container {
+        display: grid;
+        grid-template-columns: max-content min-content;
+        column-gap: 1rem;
     }
 </style>

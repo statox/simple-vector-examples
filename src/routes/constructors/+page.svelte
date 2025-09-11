@@ -12,11 +12,11 @@
     });
     const resultingObject = $derived.by(() => {
         const o = v.toObject();
-        return `{x : ${o.x}, y: ${o.y}}`;
+        return `{x: ${o.x}, y: ${o.y}}`;
     });
     const resultingPolar = $derived.by(() => {
         const p = v.toPolar();
-        return `{r : ${p.r}, theta: ${p.theta}}`;
+        return `{r: ${p.r}, theta: ${p.theta}}`;
     });
 
     const vectors = $derived([

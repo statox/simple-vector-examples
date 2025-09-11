@@ -3,7 +3,7 @@
     import { Vector } from 'simple-vector';
 
     let clampMax = $state(3);
-    let clampMin = $state(2);
+    let clampMin = $state(1.5);
     let minBoundEnabled = $state(true);
 
     let v1: Vector = $state(new Vector(0, 4));
@@ -47,14 +47,18 @@
     const grid = { size: 10, graduation: 1 };
 </script>
 
-<h3>Clamp</h3>
+<h3>Clamp magnitude</h3>
 
-<span>max bound</span><input type="number" bind:value={clampMax} />
-<span>Enable min bound <input type="checkbox" bind:checked={minBoundEnabled} /></span>
-{#if minBoundEnabled}
-    <span>min bound</span>
-    <input type="number" bind:value={clampMin} />
-{/if}
+<div class="input-container">
+    <span> Enable min bound </span>
+    <input type="checkbox" bind:checked={minBoundEnabled} />
+    <span class="input">max bound</span>
+    <input type="number" bind:value={clampMax} />
+    {#if minBoundEnabled}
+        <span class="input"> min bound </span>
+        <input type="number" bind:value={clampMin} />
+    {/if}
+</div>
 
 <div class="results">
     <div>
@@ -72,5 +76,10 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+    .input-container {
+        display: grid;
+        grid-template-columns: max-content min-content;
+        column-gap: 1rem;
     }
 </style>
