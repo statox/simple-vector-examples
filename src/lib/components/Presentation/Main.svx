@@ -6,19 +6,21 @@ This page gathers some interactive examples for the npm package [`simple-vector`
 
 In the visualizations drag the red and green vectors which are used as input vectors and observe how the other vectors or the numerical results evolve as you change the inputs.
 
-- [Angle methods]({resolve('/angle')})
-- [AngleWith methods]({resolve('/angleWith')})
-- [Clamp methods]({resolve('/clamp')})
-- [Comparison methods]({resolve('/comparison')})
-- [Constructors methods]({resolve('/constructors')})
-- [Distance methods]({resolve('/distance')})
-- [Interpolation methods]({resolve('/interpolation')})
-- [Inversion methods]({resolve('/inversion')})
-- [Limit methods]({resolve('/limit')})
-- [Product methods]({resolve('/product')})
-- [Randomization methods]({resolve('/randomization')})
-- [Reflect methods]({resolve('/reflect')})
-- [Resize methods]({resolve('/resize')})
-- [Rotation methods]({resolve('/rotation')})
+The examples are sorted by method category:
+
+- [Angle]({resolve('/angle')})
+- [AngleWith]({resolve('/angleWith')})
+- [Clamp]({resolve('/clamp')})
+- [Comparison]({resolve('/comparison')})
+- [Constructors]({resolve('/constructors')})
+- [Distance]({resolve('/distance')})
+- [Interpolation]({resolve('/interpolation')})
+- [Inversion]({resolve('/inversion')})
+- [Limit]({resolve('/limit')})
+- [Product]({resolve('/product')})
+- [Randomization]({resolve('/randomization')})
+- [Reflect]({resolve('/reflect')})
+- [Resize]({resolve('/resize')})
+- [Rotation]({resolve('/rotation')})
 
 If you find an error please fill an issue [on Github](https://github.com/statox/simple-vector-examples/issues).
