@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import"../chunks/BCFSpFHz.js";import{f as r,c as t,z as n}from"../chunks/CY1iBhr2.js";var p=r("<h2>Tests</h2> <p><strong>If you are not me you should not be here</strong></p> <p>This is where I keep experiments and unfinished work.</p>",1);function i(e){var o=p();n(4),t(e,o)}export{i as component};
