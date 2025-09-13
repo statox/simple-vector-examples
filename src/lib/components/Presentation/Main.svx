@@ -10,6 +10,10 @@ The examples are sorted by method category:
 
 - [Angle]({resolve('/angle')})
 - [AngleWith]({resolve('/angleWith')})
+- [Arithmetic - Addition]({resolve('/arithmetic/add')})
+- [Arithmetic - Division]({resolve('/arithmetic/divide')})
+- [Arithmetic - Multiplication]({resolve('/arithmetic/multiply')})
+- [Arithmetic - Subtraction]({resolve('/arithmetic/subtract')})
 - [Clamp]({resolve('/clamp')})
 - [Comparison]({resolve('/comparison')})
 - [Constructors]({resolve('/constructors')})
